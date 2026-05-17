@@ -27,6 +27,12 @@ export default function HomeScreen() {
             style={styles.avatar}
           />
 
+          {/* Name */}
+          <Text style={styles.name}>Emmanuel Marasigan</Text>
+
+          {/* Bio */}
+          <Text style={styles.bio}>MMA Student · CS126</Text>
+
           {/* Input */}
           <TextInput
             style={styles.input}
@@ -52,7 +58,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: '#eeeeee',
   },
   wrapper: {
     flex: 1,
@@ -61,15 +67,25 @@ const styles = StyleSheet.create({
   },
   card: {
     alignItems: 'center',
-    gap: 16,
+    gap: 6,
   },
   avatar: {
     width: 120,
     height: 120,
     borderRadius: 60,
-    marginBottom: 8,
+    marginBottom: 12,
+  },
+  name: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#111',
+  },
+  bio: {
+    fontSize: 13,
+    color: '#888',
   },
   input: {
+    marginTop: 16,
     width: 220,
     borderWidth: 1,
     borderColor: '#ccc',
@@ -80,7 +96,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   greeting: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#000',
   },
