@@ -1,4 +1,5 @@
 import * as Device from 'expo-device';
+import { useEffect } from 'react';
 import { Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -8,6 +9,16 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { WebBadge } from '@/components/web-badge';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
+
+// ---- Task ----
+const myName = "EJ";
+
+const greet = (name: string) => {
+  return `Hey ${name}, what's up!`;
+};
+
+const classmates = ["Ana", "Ben", "Carlo", "Maria", "Jose", "Sofia"];
+// --------------
 
 function getDevMenuHint() {
   if (Platform.OS === 'web') {
@@ -29,6 +40,11 @@ function getDevMenuHint() {
 }
 
 export default function HomeScreen() {
+
+  useEffect(() => {
+    console.log(classmates.map(name => greet(name)));
+  }, []);
+
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
